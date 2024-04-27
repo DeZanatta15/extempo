@@ -1,9 +1,5 @@
-# cython: boundscheck=False
-# cython: wraparound=False
-
 def update(lattice):
-    cdef int box_length = len(lattice) - 2
-    cdef int i,j 
+    box_length = len(lattice) - 2
     lattice_new = [[0 for _ in range(box_length + 2)] for _ in range(box_length + 2)]
     for i in range(1, box_length + 1):
         for j in range(1, box_length + 1):
@@ -11,14 +7,7 @@ def update(lattice):
     return lattice_new
 
 
-
-
-
-
-
-
-cdef int def update_rule(lattice, int i, int j):
-cdef int n_neigh
+def update_rule(lattice, i, j):
     n_neigh = lattice[i + 1][j] + lattice[i][j + 1] + lattice[i + 1][j + 1] + \
         lattice[i + 1][j - 1] + lattice[i - 1][j] + lattice[i][j - 1] + \
         lattice[i - 1][j + 1] + lattice[i - 1][j - 1]

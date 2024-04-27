@@ -8,12 +8,6 @@ def update(lattice):
     return lattice_new
 
 
-
-
-
-
-
-
 def update_rule(lattice, int i, int j):
     cdef int n_neigh
     n_neigh = lattice[i + 1][j] + lattice[i][j + 1] + lattice[i + 1][j + 1] + \
